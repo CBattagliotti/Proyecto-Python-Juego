@@ -37,20 +37,11 @@ def mostrar_guiones(palabra):
 
 
 
-# def pedir_letra():
-#     letra_elegida = input(Fore.LIGHTYELLOW_EX + "Por favor ingresa una letra:  " + Fore.WHITE).upper()
-#     return letra_elegida
-
 pedir_letra = lambda : input(Fore.LIGHTYELLOW_EX + "Por favor ingresa una letra: " + Fore.WHITE).upper()
 
 
 
 def validar_letra(letra):
-    # if letra in palabra and len(letra) == 1 and type(letra) == str:
-    # print(Fore.LIGHTGREEN_EX + "\nMuy bien! Es correcta.\n" + Fore.WHITE)
-    #     return True
-
-    # Los numeros ingresaran como string.
     numeros = ["1","2","3","4","5","6","7","8","9"]  
 
     if len(letra) != 1:
@@ -68,4 +59,24 @@ def validar_letra(letra):
     else:
         print(Fore.LIGHTRED_EX + "\nQue mal, no adiviniste :(\n" + Fore.WHITE)
         return False
+
+
+
+@decorador
+def fin_juego():
+    print("\n " + Fore.WHITE + ("=" * 10) + Fore.RED + "  FIN DEL JUEGO  " + Fore.WHITE + ("=" * 10) +"\n\n")
+    print(Fore.RED + "Te quedaste sin vidas :(\nNo te preocupes, la proxima lo conseguiras!!\n")
+    print(Fore.RED + f"La palabra era: '{palabra}'\n")
+
+
+
+@decorador
+def ganar():
+    print(" " + Fore.WHITE + ("=" * 5) + Fore.GREEN + " FELICIDADES!! HAS GANADO!! " + Fore.WHITE + ("=" * 5) + "\n")
+    print(Fore.GREEN + f"La palabra era: '{palabra}' ( pero eso ya lo sabias ;) )\n") 
+
+
+@decorador
+def salir():
+    print(Fore.RED + "Has salido\n\nVuelve cuando quieras!\n" + Fore.WHITE)
 
