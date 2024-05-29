@@ -1,4 +1,5 @@
 from random import choice
+from colorama import Fore,Style
 
 opciones = ["Tazon", "karaoke", "Sistemas", "rosquita", "Cielo", "Oasis", "python"]
 
@@ -18,3 +19,22 @@ palabra = elegir_palabra(opciones)
             #3 : "python"
            #}
 #palabra = opciones[numero_oculto]
+
+
+def saludo():
+     print(Fore.LIGHTCYAN_EX + "  Bienvenido a 'Adivina la palabra'!!\n\n  Comienzas con 5 vidas, aprovechalas!\n")
+
+saludo()
+
+
+def mostrar_guiones(palabra):
+    palabra_escondida = ""
+    for letra in palabra:
+        letra = "-"
+        palabra_escondida = palabra_escondida + letra
+    print(Fore.WHITE + "\n[ Si en algun momento quieres salir del juego ingresa '#' ]\n")
+    print(Fore.LIGHTMAGENTA_EX + f"\nLa palabra tiene {len(palabra)} letras: \n" + Fore.WHITE)
+    print(palabra_escondida + "\n")
+    return palabra_escondida 
+
+print(mostrar_guiones(palabra))
