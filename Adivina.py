@@ -80,3 +80,42 @@ def ganar():
 def salir():
     print(Fore.RED + "Has salido\n\nVuelve cuando quieras!\n" + Fore.WHITE)
 
+
+
+def funcionamiento(palabra_guiones):
+    vidas = 5
+    lista_incorrectas = []
+    lista = list(palabra_guiones)
+    
+    while vidas > 0:
+        letra = pedir_letra()
+        if letra == "#":
+            salir()
+            break
+            
+        elif validar_letra(letra) == True:
+            i = 0
+            for l in palabra:
+                if l == letra:
+                    lista[i] = letra
+                i += 1
+
+            palabra_nueva = "".join(lista)
+            print(palabra_nueva + "\n") 
+
+            if palabra_nueva.count("-") == 0:
+            #if palabra_nueva == palabra:
+                ganar()
+                break
+
+            else:
+                if letra in lista_incorrectas:
+                    print(Fore.LIGHTRED_EX + "Ya has intentado con esa letra. Ingresa una distinta" + Fore.WHITE)
+                else:
+                    lista_incorrectas.append(letra)
+                    vidas -= 1
+                print(f"Letras incorrectas ingresadas: {lista_incorrectas}")
+                print(Fore.LIGHTRED_EX + f"Tienes ahora {vidas} vidas\n\n" + Fore.WHITE)
+                if vidas == 0:
+                    fin_juego()
+                    break
