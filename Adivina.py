@@ -21,7 +21,7 @@ def decorador(funcion):
 # Imprime el saludo de bienvenida al juego
 @decorador
 def saludo():
-     print(Fore.LIGHTCYAN_EX + "  Bienvenido a 'Adivina la palabra'!!\n\n  Comienzas con 5 vidas, aprovechalas!\n")
+     print(Fore.LIGHTCYAN_EX + "  Bienvenido a 'Adivina la palabra' !!\n\n  Comienzas con 5 vidas, aprovechalas!\n")
 
 saludo()
 
@@ -32,7 +32,7 @@ def mostrar_guiones(palabra):
     for letra in palabra:
         letra = "-"
         palabra_escondida = palabra_escondida + letra
-    print(Fore.WHITE + "\n[ Si en algun momento quieres salir del juego ingresa '#' ]\n")
+    print(Fore.WHITE + "\n[ SI EN ALGUN MOMENTO QUIERES SALIR DEL JUEGO INGRESA: '#' ]\n")
     print(Fore.LIGHTMAGENTA_EX + f"\nLa palabra tiene {len(palabra)} letras: \n" + Fore.WHITE)
     print(palabra_escondida + "\n")
     return palabra_escondida 
