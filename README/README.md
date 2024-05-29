@@ -30,6 +30,11 @@
 
     ![alt text](<Mensaje Ganador.png>)
 
+    3) El jugador ingresa el caracter  **"#"**
+
+    ![alt text](Salida.png)
+
+
 
 ### Consideraciones:
 
